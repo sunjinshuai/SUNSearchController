@@ -8,6 +8,7 @@
 
 #import "TestResultTableViewController.h"
 #import "Product.h"
+#import "TestDetailViewController.h"
 
 @implementation TestResultTableViewController
 
@@ -59,7 +60,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
+    TestDetailViewController *detail = [[TestDetailViewController alloc] init];
+    [self.presentingViewController.navigationController pushViewController:detail animated:YES];
 }
 
 

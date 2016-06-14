@@ -10,4 +10,11 @@
 
 @implementation TestDetailViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.title = @"测试数据";
+}
+
 @end

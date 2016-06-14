@@ -9,6 +9,7 @@
 #import "TestTableViewController.h"
 #import "TestResultTableViewController.h"
 #import "Product.h"
+#import "TestDetailViewController.h"
 
 @interface TestTableViewController ()<UISearchResultsUpdating, UISearchBarDelegate>
 
@@ -26,7 +27,7 @@
     self.title = @"全部品牌";
     
     self.products = [Product allProducts];
-
+    
     TestResultTableViewController *result = [[TestResultTableViewController alloc] init];
     result.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:result];
@@ -60,6 +61,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    TestDetailViewController *detail = [[TestDetailViewController alloc] init];
+    [self.navigationController pushViewController:detail animated:YES];
+}
+
 #pragma mark - UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
@@ -74,7 +82,7 @@
     
     [self updateFilteredContentForProductName:searchString type:scope];
     if (self.searchController.searchResultsController) {
-
+        
         TestResultTableViewController *vc = (TestResultTableViewController *)self.searchController.searchResultsController;
         vc.searchResults = self.searchResults;
         [vc.tableView reloadData];
@@ -102,7 +110,7 @@
     
     
     [self.searchResults removeAllObjects];
-
+    
     for (Product *product in self.products) {
         if ((typeName == nil) || [product.type isEqualToString:typeName]) {
             NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
