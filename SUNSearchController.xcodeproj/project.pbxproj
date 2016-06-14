@@ -15,6 +15,10 @@
 		4C0FE3F51D100497009E305F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0FE3F31D100497009E305F /* LaunchScreen.storyboard */; };
 		4C0FE4001D100497009E305F /* SUNSearchControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE3FF1D100497009E305F /* SUNSearchControllerTests.m */; };
 		4C0FE40B1D100497009E305F /* SUNSearchControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE40A1D100497009E305F /* SUNSearchControllerUITests.m */; };
+		4C0FE41A1D1005EC009E305F /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE4191D1005EC009E305F /* TestTableViewController.m */; };
+		4C0FE41D1D100606009E305F /* TestResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE41C1D100606009E305F /* TestResultTableViewController.m */; };
+		4C0FE4201D100626009E305F /* TestDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE41F1D100626009E305F /* TestDetailViewController.m */; };
+		4C0FE4231D100AAE009E305F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE4221D100AAE009E305F /* Product.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		4C0FE4061D100497009E305F /* SUNSearchControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUNSearchControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0FE40A1D100497009E305F /* SUNSearchControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SUNSearchControllerUITests.m; sourceTree = "<group>"; };
 		4C0FE40C1D100497009E305F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C0FE4181D1005EC009E305F /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		4C0FE4191D1005EC009E305F /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		4C0FE41B1D100606009E305F /* TestResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResultTableViewController.h; sourceTree = "<group>"; };
+		4C0FE41C1D100606009E305F /* TestResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestResultTableViewController.m; sourceTree = "<group>"; };
+		4C0FE41E1D100626009E305F /* TestDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDetailViewController.h; sourceTree = "<group>"; };
+		4C0FE41F1D100626009E305F /* TestDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDetailViewController.m; sourceTree = "<group>"; };
+		4C0FE4211D100AAE009E305F /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		4C0FE4221D100AAE009E305F /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,14 @@
 				4C0FE3E91D100497009E305F /* AppDelegate.m */,
 				4C0FE3EB1D100497009E305F /* ViewController.h */,
 				4C0FE3EC1D100497009E305F /* ViewController.m */,
+				4C0FE4211D100AAE009E305F /* Product.h */,
+				4C0FE4221D100AAE009E305F /* Product.m */,
+				4C0FE4181D1005EC009E305F /* TestTableViewController.h */,
+				4C0FE4191D1005EC009E305F /* TestTableViewController.m */,
+				4C0FE41B1D100606009E305F /* TestResultTableViewController.h */,
+				4C0FE41C1D100606009E305F /* TestResultTableViewController.m */,
+				4C0FE41E1D100626009E305F /* TestDetailViewController.h */,
+				4C0FE41F1D100626009E305F /* TestDetailViewController.m */,
 				4C0FE3EE1D100497009E305F /* Main.storyboard */,
 				4C0FE3F11D100497009E305F /* Assets.xcassets */,
 				4C0FE3F31D100497009E305F /* LaunchScreen.storyboard */,
@@ -270,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0FE4231D100AAE009E305F /* Product.m in Sources */,
 				4C0FE3ED1D100497009E305F /* ViewController.m in Sources */,
+				4C0FE4201D100626009E305F /* TestDetailViewController.m in Sources */,
+				4C0FE41D1D100606009E305F /* TestResultTableViewController.m in Sources */,
 				4C0FE3EA1D100497009E305F /* AppDelegate.m in Sources */,
 				4C0FE3E71D100497009E305F /* main.m in Sources */,
+				4C0FE41A1D1005EC009E305F /* TestTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
