@@ -107,8 +107,7 @@
         }
         return;
     }
-    
-    
+ 
     [self.searchResults removeAllObjects];
     
     for (Product *product in self.products) {
