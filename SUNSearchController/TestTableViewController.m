@@ -10,12 +10,16 @@
 #import "TestResultTableViewController.h"
 #import "Product.h"
 #import "TestDetailViewController.h"
+#import "TestResultViewCell.h"
+#import "MBProgressHUD+Extension.h"
 
-@interface TestTableViewController ()<UISearchResultsUpdating, UISearchBarDelegate>
+@interface TestTableViewController ()<UISearchResultsUpdating, UISearchBarDelegate,TestResultViewCellDelegate>
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchResults; // Filtered search results
 @property (nonatomic, strong) NSArray *products;
+@property (nonatomic, strong) UIMenuController *menuController;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end
 
@@ -47,17 +51,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ProductCell";
+    TestResultViewCell *cell = [TestResultViewCell cellWithTableView:tableView];
+    cell.delegate = self;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.font = [UIFont systemFontOfSize:15.0];
-        
-    }
-    Product *product = [self.products objectAtIndex:indexPath.row];
-    cell.textLabel.text = product.name;
+    cell.product = self.products[indexPath.row];
     return cell;
 }
 
@@ -129,6 +126,68 @@
     [self updateSearchResultsForSearchController:self.searchController];
 }
 
+#pragma mark - TestResultViewCellDelegate
+- (void)testResultViewCell:(TestResultViewCell *)testResultViewCell didLongPressRecognizer:(UILongPressGestureRecognizer *)longPressRecognizer
+{
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.products indexOfObject:testResultViewCell.product] inSection:0];
+    
+    self.indexPath = indexPath;
+    CGRect contentRect = CGRectZero;
+    UIButton *contentBtn;
+    
+    for (UIView *subViews in testResultViewCell.contentView.subviews) {
+        for (UIView *subView in subViews.subviews) {
+            if ([subView isKindOfClass:[UIButton class]]) {
+                
+                contentBtn = (UIButton*)subView;
+                
+                contentRect = subView.frame;
+            }
+        }
+        
+    }
+    
+    [self.menuController setTargetRect:contentRect inView:contentBtn.superview];
+    
+    [self.menuController setMenuVisible:YES animated:YES];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    if (action == @selector(copy:)){
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+#pragma mark - Private Method
+- (void)copy:(UIMenuItem *)button
+{
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    Product *product = self.products[self.indexPath.row];
+    pasteboard.string  = product.name;
+    [MBProgressHUD showTipsMessage:@"拷贝成功" toView:self.view];
+}
+
+
 #pragma mark - Lazy load
 - (NSArray *)products
 {
@@ -136,6 +195,16 @@
         _products = [NSArray array];
     }
     return _products;
+}
+
+#pragma mark - setter and getter
+- (UIMenuController *)menuController
+{
+    if (_menuController == nil) {
+        _menuController = [UIMenuController sharedMenuController];
+        [_menuController setArrowDirection:(UIMenuControllerArrowDown)];
+    }
+    return _menuController;
 }
 
 @end

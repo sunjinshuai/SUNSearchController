@@ -19,6 +19,11 @@
 		4C0FE41D1D100606009E305F /* TestResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE41C1D100606009E305F /* TestResultTableViewController.m */; };
 		4C0FE4201D100626009E305F /* TestDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE41F1D100626009E305F /* TestDetailViewController.m */; };
 		4C0FE4231D100AAE009E305F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FE4221D100AAE009E305F /* Product.m */; };
+		4C6282B01D3BBC38009E93CF /* TestResultViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6282AE1D3BBC38009E93CF /* TestResultViewCell.m */; };
+		4C6282B11D3BBC38009E93CF /* TestResultViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6282AF1D3BBC38009E93CF /* TestResultViewCell.xib */; };
+		4C6282B61D3BC133009E93CF /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C6282B31D3BC133009E93CF /* MBProgressHUD.bundle */; };
+		4C6282B71D3BC133009E93CF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6282B51D3BC133009E93CF /* MBProgressHUD.m */; };
+		4C6282BA1D3BC17E009E93CF /* MBProgressHUD+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6282B91D3BC17E009E93CF /* MBProgressHUD+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,14 @@
 		4C0FE41F1D100626009E305F /* TestDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDetailViewController.m; sourceTree = "<group>"; };
 		4C0FE4211D100AAE009E305F /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		4C0FE4221D100AAE009E305F /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		4C6282AD1D3BBC38009E93CF /* TestResultViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResultViewCell.h; sourceTree = "<group>"; };
+		4C6282AE1D3BBC38009E93CF /* TestResultViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestResultViewCell.m; sourceTree = "<group>"; };
+		4C6282AF1D3BBC38009E93CF /* TestResultViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestResultViewCell.xib; sourceTree = "<group>"; };
+		4C6282B31D3BC133009E93CF /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		4C6282B41D3BC133009E93CF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4C6282B51D3BC133009E93CF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4C6282B81D3BC17E009E93CF /* MBProgressHUD+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Extension.h"; sourceTree = "<group>"; };
+		4C6282B91D3BC17E009E93CF /* MBProgressHUD+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +126,9 @@
 		4C0FE3E41D100497009E305F /* SUNSearchController */ = {
 			isa = PBXGroup;
 			children = (
+				4C6282B21D3BC133009E93CF /* MBProgressHUD */,
+				4C6282B81D3BC17E009E93CF /* MBProgressHUD+Extension.h */,
+				4C6282B91D3BC17E009E93CF /* MBProgressHUD+Extension.m */,
 				4C0FE3E81D100497009E305F /* AppDelegate.h */,
 				4C0FE3E91D100497009E305F /* AppDelegate.m */,
 				4C0FE3EB1D100497009E305F /* ViewController.h */,
@@ -123,6 +139,9 @@
 				4C0FE4191D1005EC009E305F /* TestTableViewController.m */,
 				4C0FE41B1D100606009E305F /* TestResultTableViewController.h */,
 				4C0FE41C1D100606009E305F /* TestResultTableViewController.m */,
+				4C6282AD1D3BBC38009E93CF /* TestResultViewCell.h */,
+				4C6282AE1D3BBC38009E93CF /* TestResultViewCell.m */,
+				4C6282AF1D3BBC38009E93CF /* TestResultViewCell.xib */,
 				4C0FE41E1D100626009E305F /* TestDetailViewController.h */,
 				4C0FE41F1D100626009E305F /* TestDetailViewController.m */,
 				4C0FE3EE1D100497009E305F /* Main.storyboard */,
@@ -158,6 +177,16 @@
 				4C0FE40C1D100497009E305F /* Info.plist */,
 			);
 			path = SUNSearchControllerUITests;
+			sourceTree = "<group>";
+		};
+		4C6282B21D3BC133009E93CF /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4C6282B31D3BC133009E93CF /* MBProgressHUD.bundle */,
+				4C6282B41D3BC133009E93CF /* MBProgressHUD.h */,
+				4C6282B51D3BC133009E93CF /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0FE3F51D100497009E305F /* LaunchScreen.storyboard in Resources */,
+				4C6282B11D3BBC38009E93CF /* TestResultViewCell.xib in Resources */,
+				4C6282B61D3BC133009E93CF /* MBProgressHUD.bundle in Resources */,
 				4C0FE3F21D100497009E305F /* Assets.xcassets in Resources */,
 				4C0FE3F01D100497009E305F /* Main.storyboard in Resources */,
 			);
@@ -291,8 +322,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0FE4231D100AAE009E305F /* Product.m in Sources */,
+				4C6282BA1D3BC17E009E93CF /* MBProgressHUD+Extension.m in Sources */,
+				4C6282B01D3BBC38009E93CF /* TestResultViewCell.m in Sources */,
 				4C0FE3ED1D100497009E305F /* ViewController.m in Sources */,
 				4C0FE4201D100626009E305F /* TestDetailViewController.m in Sources */,
+				4C6282B71D3BC133009E93CF /* MBProgressHUD.m in Sources */,
 				4C0FE41D1D100606009E305F /* TestResultTableViewController.m in Sources */,
 				4C0FE3EA1D100497009E305F /* AppDelegate.m in Sources */,
 				4C0FE3E71D100497009E305F /* main.m in Sources */,
@@ -522,6 +556,7 @@
 				4C0FE4111D100497009E305F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C0FE4121D100497009E305F /* Build configuration list for PBXNativeTarget "SUNSearchControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +565,7 @@
 				4C0FE4141D100497009E305F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C0FE4151D100497009E305F /* Build configuration list for PBXNativeTarget "SUNSearchControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +574,7 @@
 				4C0FE4171D100497009E305F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
